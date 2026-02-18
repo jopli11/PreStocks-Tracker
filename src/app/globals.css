@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+:root {
+  --bg-transparent: transparent;
+  --text: #1a1a1a;
+  --muted: rgba(0, 0, 0, 0.5);
+  --accent: #6264d9; /* The purple from the brief: rgba(98, 100, 217, 0.9) */
+  --good: #00a870;
+  --bad: #e63946;
+  --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+}
+
+body {
+  background: var(--bg-transparent);
+  color: var(--text);
+  font-family: var(--font);
+  margin: 0;
+  overflow: hidden;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-ticker {
+  display: flex;
+  width: max-content;
+  animation: scroll 60s linear infinite;
+}
+
+/* Ensure no overlap and consistent spacing */
+.ticker-item {
+  display: flex;
+  align-items: center;
+  padding: 0 4rem;
+  white-space: nowrap;
+}
