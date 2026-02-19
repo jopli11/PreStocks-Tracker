@@ -135,7 +135,7 @@ export default function TokenTicker() {
               <div key={`${item.target?.key}-${idx}`} className="ticker-item gap-6">
                 {/* Logo & Basic Info */}
                 <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-full bg-black/5 border border-black/10 p-0.5 overflow-hidden flex-shrink-0">
+                  <div className="w-7 h-7 rounded-full bg-black/5 border border-black/10 p-0.5 overflow-hidden shrink-0">
                     {item.data?.image && (
                       <img src={item.data.image} alt={item.target?.key} className="w-full h-full object-cover rounded-full" />
                     )}
