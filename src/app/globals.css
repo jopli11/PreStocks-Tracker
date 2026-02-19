@@ -37,6 +37,6 @@ body {
 .ticker-item {
   display: flex;
   align-items: center;
-  padding: 0 4rem;
+  padding: 0 2.5rem;
   white-space: nowrap;
 }

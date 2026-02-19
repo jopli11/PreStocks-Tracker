@@ -98,12 +98,9 @@ export default function TokenTicker() {
 
   return (
     <div className="fixed bottom-0 left-0 w-full h-16 bg-white/95 backdrop-blur-xl border-t border-black/5 flex items-center overflow-hidden z-50 shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
-      {/* Fixed Header */}
-      <div className="flex items-center gap-3 px-6 h-full bg-white z-20 border-r border-black/5 shadow-[15px_0_25px_rgba(255,255,255,0.8)]">
-        <div className="flex flex-col">
-          <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#6264d9]">LIVE FEED</span>
-          <span className="text-[8px] font-mono text-black/30 uppercase font-bold">{lastUpdated}</span>
-        </div>
+      {/* Fixed Header - Replaced text with Logo */}
+      <div className="flex items-center px-6 h-full bg-white z-20 border-r border-black/5 shadow-[15px_0_25px_rgba(255,255,255,0.8)]">
+        <Image src="/prestocks-logo.svg" alt="PreStocks" width={100} height={24} className="h-6 w-auto" />
       </div>
 
       {/* Scrolling Ticker */}
@@ -112,7 +109,7 @@ export default function TokenTicker() {
           {tickerItems.map((item, idx) => {
             if (item.type === 'brand') {
               return (
-                <div key={`brand-${idx}`} className="ticker-item px-12 flex items-center">
+                <div key={`brand-${idx}`} className="ticker-item px-8 flex items-center">
                   <Image src="/prestocks-logo.svg" alt="PreStocks" width={90} height={20} className="h-5 w-auto" />
                 </div>
               );
@@ -120,7 +117,7 @@ export default function TokenTicker() {
 
             if (item.type === 'solana') {
               return (
-                <div key={`solana-${idx}`} className="ticker-item px-12 flex items-center">
+                <div key={`solana-${idx}`} className="ticker-item px-8 flex items-center">
                   <Image src="/powered-by-solana.svg" alt="Powered by Solana" width={110} height={20} className="h-5 w-auto" />
                 </div>
               );
@@ -135,9 +132,9 @@ export default function TokenTicker() {
             const isPositive = parseFloat(change) >= 0;
 
             return (
-              <div key={`${item.target?.key}-${idx}`} className="ticker-item gap-10">
+              <div key={`${item.target?.key}-${idx}`} className="ticker-item gap-6">
                 {/* Logo & Basic Info */}
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2">
                   <div className="w-7 h-7 rounded-full bg-black/5 border border-black/10 p-0.5 overflow-hidden flex-shrink-0">
                     {item.data?.image && (
                       <img src={item.data.image} alt={item.target?.key} className="w-full h-full object-cover rounded-full" />
@@ -158,7 +155,7 @@ export default function TokenTicker() {
                 </div>
 
                 {/* Valuation & Supply (Brief Info) */}
-                <div className="flex gap-6 text-[10px] font-bold uppercase tracking-tighter">
+                <div className="flex gap-4 text-[10px] font-bold uppercase tracking-tighter">
                   <div className="flex flex-col">
                     <span className="text-black/30 text-[8px] tracking-normal mb-0.5">Valuation</span>
                     <span className="text-black/70">{fmtCompact(valuation)}</span>
@@ -170,7 +167,7 @@ export default function TokenTicker() {
                 </div>
                 
                 {/* Separator */}
-                <div className="w-px h-6 bg-black/5 ml-2" />
+                <div className="w-px h-6 bg-black/5 ml-1" />
               </div>
             );
           })}
